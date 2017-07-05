@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		7929672C6FBEFE492BBDCF67 /* Pods_Pley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7434D468D7E99B9925992AD2 /* Pods_Pley.framework */; };
 		99F305DB1F0D923500EA8BC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F305DA1F0D923500EA8BC9 /* AppDelegate.swift */; };
-		99F305DD1F0D923500EA8BC9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F305DC1F0D923500EA8BC9 /* ViewController.swift */; };
 		99F305E01F0D923500EA8BC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F305DE1F0D923500EA8BC9 /* Main.storyboard */; };
 		99F305E21F0D923500EA8BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99F305E11F0D923500EA8BC9 /* Assets.xcassets */; };
 		99F305E51F0D923500EA8BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F305E31F0D923500EA8BC9 /* LaunchScreen.storyboard */; };
+		B266E9861F0DA30400F90FB0 /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B266E9851F0DA30400F90FB0 /* BusinessViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +21,11 @@
 		7434D468D7E99B9925992AD2 /* Pods_Pley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F305D71F0D923500EA8BC9 /* Pley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pley.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99F305DA1F0D923500EA8BC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		99F305DC1F0D923500EA8BC9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		99F305DF1F0D923500EA8BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		99F305E11F0D923500EA8BC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99F305E41F0D923500EA8BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99F305E61F0D923500EA8BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B266E9851F0DA30400F90FB0 /* BusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,14 +78,22 @@
 		99F305D91F0D923500EA8BC9 /* Pley */ = {
 			isa = PBXGroup;
 			children = (
-				99F305DA1F0D923500EA8BC9 /* AppDelegate.swift */,
-				99F305DC1F0D923500EA8BC9 /* ViewController.swift */,
-				99F305DE1F0D923500EA8BC9 /* Main.storyboard */,
 				99F305E11F0D923500EA8BC9 /* Assets.xcassets */,
+				99F305DE1F0D923500EA8BC9 /* Main.storyboard */,
+				99F305DA1F0D923500EA8BC9 /* AppDelegate.swift */,
 				99F305E31F0D923500EA8BC9 /* LaunchScreen.storyboard */,
 				99F305E61F0D923500EA8BC9 /* Info.plist */,
+				B266E9871F0DA31200F90FB0 /* View Controller */,
 			);
 			path = Pley;
+			sourceTree = "<group>";
+		};
+		B266E9871F0DA31200F90FB0 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B266E9851F0DA30400F90FB0 /* BusinessViewController.swift */,
+			);
+			name = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,7 +210,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -212,7 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99F305DD1F0D923500EA8BC9 /* ViewController.swift in Sources */,
+				B266E9861F0DA30400F90FB0 /* BusinessViewController.swift in Sources */,
 				99F305DB1F0D923500EA8BC9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +387,7 @@
 				99F305EB1F0D923500EA8BC9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
