@@ -7,4 +7,8 @@ target 'Pley' do
 
   # Pods for Pley
     pod "YelpAPI"
+    pod 'SwiftyJSON', :git => 'https://github.com/IBM-Swift/SwiftyJSON.git'
+    pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git'
+    pod 'AlamofireImage', :git => 'https://github.com/Alamofire/AlamofireImage.git'
+    pod 'AlamofireNetworkActivityIndicator', :git => 'https://github.com/Alamofire/AlamofireNetworkActivityIndicator.git'
 end
