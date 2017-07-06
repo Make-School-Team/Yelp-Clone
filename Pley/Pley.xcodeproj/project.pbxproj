@@ -13,6 +13,8 @@
 		99F305E21F0D923500EA8BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99F305E11F0D923500EA8BC9 /* Assets.xcassets */; };
 		99F305E51F0D923500EA8BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F305E31F0D923500EA8BC9 /* LaunchScreen.storyboard */; };
 		B266E9861F0DA30400F90FB0 /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B266E9851F0DA30400F90FB0 /* BusinessViewController.swift */; };
+		B266E98A1F0DFF8100F90FB0 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = B266E9891F0DFF8100F90FB0 /* Business.swift */; };
+		B266E98C1F0E04AD00F90FB0 /* BusinessCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B266E98B1F0E04AD00F90FB0 /* BusinessCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		99F305E41F0D923500EA8BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99F305E61F0D923500EA8BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B266E9851F0DA30400F90FB0 /* BusinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
+		B266E9891F0DFF8100F90FB0 /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		B266E98B1F0E04AD00F90FB0 /* BusinessCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusinessCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +86,10 @@
 				99F305DE1F0D923500EA8BC9 /* Main.storyboard */,
 				99F305DA1F0D923500EA8BC9 /* AppDelegate.swift */,
 				99F305E31F0D923500EA8BC9 /* LaunchScreen.storyboard */,
-				99F305E61F0D923500EA8BC9 /* Info.plist */,
+				B266E9881F0DFF6F00F90FB0 /* Model */,
 				B266E9871F0DA31200F90FB0 /* View Controller */,
+				99F305E61F0D923500EA8BC9 /* Info.plist */,
+				B266E98D1F0E04B800F90FB0 /* View */,
 			);
 			path = Pley;
 			sourceTree = "<group>";
@@ -94,6 +100,22 @@
 				B266E9851F0DA30400F90FB0 /* BusinessViewController.swift */,
 			);
 			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		B266E9881F0DFF6F00F90FB0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B266E9891F0DFF8100F90FB0 /* Business.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B266E98D1F0E04B800F90FB0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B266E98B1F0E04AD00F90FB0 /* BusinessCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +242,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B266E98A1F0DFF8100F90FB0 /* Business.swift in Sources */,
+				B266E98C1F0E04AD00F90FB0 /* BusinessCell.swift in Sources */,
 				B266E9861F0DA30400F90FB0 /* BusinessViewController.swift in Sources */,
 				99F305DB1F0D923500EA8BC9 /* AppDelegate.swift in Sources */,
 			);

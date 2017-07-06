@@ -6,10 +6,7 @@ target 'Pley' do
   use_frameworks!
 
   # Pods for Pley
-    pod 'YelpAPI'
-    pod 'SwiftyJSON', :git => 'https://github.com/IBM-Swift/SwiftyJSON.git'
+    pod 'SwiftyJSON'
     pod 'Alamofire', :git => 'https://github.com/Alamofire/Alamofire.git'
-    pod 'AlamofireImage', :git => 'https://github.com/Alamofire/AlamofireImage.git'
-    pod 'AlamofireNetworkActivityIndicator', :git => 'https://github.com/Alamofire/AlamofireNetworkActivityIndicator.git'
-
+    pod 'AFNetworking'
 end
