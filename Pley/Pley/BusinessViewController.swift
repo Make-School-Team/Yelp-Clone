@@ -56,8 +56,12 @@ class BusinessViewController: UIViewController {
             vc.info = businesses[indexPath.row]
         }
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
+    }
 }
-
 extension BusinessViewController: UITableViewDelegate {
  
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -80,13 +84,10 @@ extension BusinessViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         businessTableView.deselectRow(at: indexPath, animated: true)
     }
-    
 }
-
 extension BusinessViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
 }
