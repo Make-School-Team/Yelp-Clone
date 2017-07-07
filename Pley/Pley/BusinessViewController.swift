@@ -15,7 +15,8 @@
 
 import UIKit
 import YelpAPI
-
+var alphaValue: [Int]? = nil
+var selectedCellIndex = 0
 class BusinessViewController: UIViewController {
     
     @IBOutlet weak var businessTableView: UITableView!
@@ -23,11 +24,18 @@ class BusinessViewController: UIViewController {
     let appSecret = "QSuOjLjha7ad4BafegjHJXuQQmISTNCmOmnBzt65ue1aRCBxuezdaICzjuRPPUdy"
     let query = YLPQuery(location: "Los Angeles, CA")
     var businesses: [YLPBusiness] = []
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.businessTableView.reloadData()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         query.term = "dinner"
         query.limit = 25
+        
+        
+        
         YLPClient.authorize(withAppId: appId, secret: appSecret) { (client, error) in
             if error != nil {
                 print(error.debugDescription)
@@ -54,12 +62,10 @@ class BusinessViewController: UIViewController {
         let indexPath = businessTableView.indexPath(for: cell)
         if let indexPath = indexPath {
             vc.info = businesses[indexPath.row]
+            vc.cell = cell
+            selectedCellIndex = indexPath.row
+//            vc.alphaValue = alphaValue
         }
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        
     }
 }
 extension BusinessViewController: UITableViewDelegate {
@@ -69,15 +75,21 @@ extension BusinessViewController: UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //   print(businesses.count)
+        if businesses.count > 0 && alphaValue == nil  {
+        alphaValue = [Int](repeating: 0, count: businesses.count)
+        }
         return businesses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BusinessCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BusinessCell", for: indexPath) as! BusinessCell
         
         let businessInfo = businesses[indexPath.row]
         
         (cell as? BusinessCell)?.viewModel = BusinessCellViewModel(withBusiness: businessInfo)
+        
+        
+        cell.likedLabel.alpha = CGFloat((alphaValue?[indexPath.row])!)
         
         return cell
     }

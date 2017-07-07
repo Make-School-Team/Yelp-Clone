@@ -18,6 +18,7 @@ protocol BusinessProtocol: AnyObject {
     var types: String { get }
     var reviewCount: String { get }
     var image: UIImage? { get }
+    var liked: Bool {get}
 }
 
 final class BusinessCellViewModel: BusinessProtocol {
@@ -63,6 +64,8 @@ final class BusinessCellViewModel: BusinessProtocol {
         return nil
     }
     
+    var liked = false
+    
     init(withBusiness business: YLPBusiness) {
         self.business = business
     }
@@ -82,6 +85,7 @@ final class BusinessCell: UITableViewCell {
             distanceLabel.text = vm.reviewCount
             addressLabel.text = vm.address
             businessView.image = vm.image
+//            likedLabel.alpha = 0
         }
     }
     
@@ -94,6 +98,9 @@ final class BusinessCell: UITableViewCell {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var typesLabel: UILabel!
+    @IBOutlet weak var likedLabel: UILabel!
+    
+    
     
     
     override func awakeFromNib() {

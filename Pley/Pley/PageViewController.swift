@@ -13,14 +13,14 @@ class PageViewController: UIViewController {
     
     var info: YLPBusiness?
     
-    @IBOutlet weak var imageView: UIImageView!
+    var cell: BusinessCell?
     
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    
-    @IBOutlet weak var phoneNumberLabel: UILabel!
-    
+    @IBOutlet weak var phoneNumberLabel: UIButton!
     @IBOutlet weak var reviewCountLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,19 +30,46 @@ class PageViewController: UIViewController {
         }
         nameLabel.text = info.name
         if info.location.address.first != nil {
-            locationLabel.text = "Address: \(String(describing: String(info.location.address.first!)))"
+            locationLabel.text = String(info.location.address.first!)
         } else {
             locationLabel.text = "Address Not Provided"
         }
         if info.phone != nil {
-            phoneNumberLabel.text = "Contact Info: \(String(describing: info.phone!))"
+            phoneNumberLabel.setTitle(String(info.phone!), for: .normal)
         } else {
-            phoneNumberLabel.text = "Contact Info Not Provided"
+            phoneNumberLabel.setTitle("Contact Info Not Provided", for: .normal)
         }
         reviewCountLabel.text = "Rating: \(String(info.rating))"
         let data = try! Data(contentsOf: info.imageURL!)
         let image = UIImage(data: data)
         imageView.image = image!
     }
+    
+    @IBAction func phoneNumberTapped(_ sender: UIButton) {
+        guard let info = info else{
+            print("error")
+            return
+        }
+        
+        if info.phone != nil{
+            if let url = URL(string: "tel://\(info.phone!)"), UIApplication.shared.canOpenURL(url) {
+                if #available(iOS 10, *) {
+                    UIApplication.shared.open(url)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
+            }
+        }
+    }
+    @IBAction func likeButtonTapped(_ sender: UIButton) {
+        if alphaValue?[selectedCellIndex] == 0 {
+            alphaValue?[selectedCellIndex] = 1
+        } else {
+            alphaValue?[selectedCellIndex] = 0
+        }
+        self.navigationController?.popViewController(animated: true);
+
+    }
 }
+
 
