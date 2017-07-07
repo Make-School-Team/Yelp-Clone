@@ -34,7 +34,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="udW-co-9QS">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="22.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -70,9 +70,7 @@
                             <constraint firstItem="gVQ-Uw-Cmu" firstAttribute="leading" secondItem="0B6-TL-sg8" secondAttribute="leading" constant="20" id="rjf-tM-LXw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Details" id="0P9-mG-UfY">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="iFN-Bx-zbK"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Details" id="0P9-mG-UfY"/>
                     <connections>
                         <outlet property="imageView" destination="SIe-kc-JZJ" id="goc-0k-t9g"/>
                         <outlet property="locationLabel" destination="6cl-v2-2ON" id="6KT-lI-hen"/>
@@ -83,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3L-xC-TNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1727.2" y="170.46476761619192"/>
+            <point key="canvasLocation" x="1711" y="171"/>
         </scene>
         <!--Pley-->
         <scene sceneID="Ha1-gH-Q39">
@@ -126,13 +124,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="9999 m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIr-CU-Sh7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="review count" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIr-CU-Sh7">
                                                     <rect key="frame" x="274" y="21" width="93" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$$$" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B76-Un-H33">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="open" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B76-Un-H33">
                                                     <rect key="frame" x="319" y="8" width="48" height="12"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -217,9 +215,13 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kbq-Hq-0mf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ia-Vt-K58">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3Ia-Vt-K58">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.19607843137254902" blue="0.65098039215686276" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Quicksilver" family="Quicksilver" pointSize="50"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -228,7 +230,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEn-WD-UUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298" y="170"/>
+            <point key="canvasLocation" x="-265" y="171"/>
         </scene>
     </scenes>
 </document>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7929672C6FBEFE492BBDCF67 /* Pods_Pley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7434D468D7E99B9925992AD2 /* Pods_Pley.framework */; };
 		999FDA3B1F0EF82300FA5B84 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999FDA3A1F0EF82300FA5B84 /* PageViewController.swift */; };
+		99A2B4621F0F64C400F592F5 /* Quicksilver.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99A2B4601F0F64A900F592F5 /* Quicksilver.ttf */; };
 		99F2FD031F0EB9CE000429C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F2FD021F0EB9CE000429C5 /* Main.storyboard */; };
 		99F305DB1F0D923500EA8BC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F305DA1F0D923500EA8BC9 /* AppDelegate.swift */; };
 		99F305E21F0D923500EA8BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99F305E11F0D923500EA8BC9 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		32D3F37A31C3DC45AD354483 /* Pods-Pley.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pley.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pley/Pods-Pley.release.xcconfig"; sourceTree = "<group>"; };
 		7434D468D7E99B9925992AD2 /* Pods_Pley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		999FDA3A1F0EF82300FA5B84 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		99A2B4601F0F64A900F592F5 /* Quicksilver.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Quicksilver.ttf; sourceTree = "<group>"; };
 		99F2FD021F0EB9CE000429C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		99F2FD041F0EBFD7000429C5 /* Pley-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pley-Bridging-Header.h"; sourceTree = "<group>"; };
 		99F305D71F0D923500EA8BC9 /* Pley.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pley.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +64,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		9980418F1F0F61500051AA37 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				99A2B4601F0F64A900F592F5 /* Quicksilver.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		99F305CE1F0D923500EA8BC9 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 		99F305D91F0D923500EA8BC9 /* Pley */ = {
 			isa = PBXGroup;
 			children = (
+				9980418F1F0F61500051AA37 /* Resources */,
 				99F305E11F0D923500EA8BC9 /* Assets.xcassets */,
 				99F2FD021F0EB9CE000429C5 /* Main.storyboard */,
 				99F305DA1F0D923500EA8BC9 /* AppDelegate.swift */,
@@ -175,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99A2B4621F0F64C400F592F5 /* Quicksilver.ttf in Resources */,
 				99F305E51F0D923500EA8BC9 /* LaunchScreen.storyboard in Resources */,
 				99F305E21F0D923500EA8BC9 /* Assets.xcassets in Resources */,
 				99F2FD031F0EB9CE000429C5 /* Main.storyboard in Resources */,
