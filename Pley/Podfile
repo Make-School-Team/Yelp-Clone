@@ -6,8 +6,6 @@ target 'Pley' do
   use_frameworks!
 
   # Pods for Pley
-    pod 'SwiftyJSON'
-    pod 'Alamofire'
-    pod 'AFNetworking'
-    pod 'YelpAPI'
+   pod ‘BrightFutures’
+   pod ‘YelpAPI’
 end

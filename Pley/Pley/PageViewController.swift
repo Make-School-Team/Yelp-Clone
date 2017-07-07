@@ -29,21 +29,20 @@ class PageViewController: UIViewController {
             return
         }
         nameLabel.text = info.name
-        locationLabel.text = "Address: \(info.location.address.first!)"
-        if info.phone != nil {
-            phoneNumberLabel.text = "Contact Info: \(info.phone!)"
+        if info.location.address.first != nil {
+            locationLabel.text = "Address: \(String(describing: String(info.location.address.first!)))"
         } else {
-            phoneNumberLabel.text = "No Contact Info"
+            locationLabel.text = "Address Not Provided"
+        }
+        if info.phone != nil {
+            phoneNumberLabel.text = "Contact Info: \(String(describing: info.phone!))"
+        } else {
+            phoneNumberLabel.text = "Contact Info Not Provided"
         }
         reviewCountLabel.text = "Rating: \(String(info.rating))"
         let data = try! Data(contentsOf: info.imageURL!)
         let image = UIImage(data: data)
         imageView.image = image!
-
-        
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
     }
 }
 

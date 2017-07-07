@@ -1,35 +1,18 @@
 PODS:
-  - AFNetworking (3.1.0):
-    - AFNetworking/NSURLSession (= 3.1.0)
-    - AFNetworking/Reachability (= 3.1.0)
-    - AFNetworking/Security (= 3.1.0)
-    - AFNetworking/Serialization (= 3.1.0)
-    - AFNetworking/UIKit (= 3.1.0)
-  - AFNetworking/NSURLSession (3.1.0):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.1.0)
-  - AFNetworking/Security (3.1.0)
-  - AFNetworking/Serialization (3.1.0)
-  - AFNetworking/UIKit (3.1.0):
-    - AFNetworking/NSURLSession
-  - Alamofire (4.5.0)
-  - SwiftyJSON (3.1.4)
+  - BrightFutures (5.2.0):
+    - Result (~> 3.2)
+  - Result (3.2.3)
   - YelpAPI (2.0.0)
 
 DEPENDENCIES:
-  - AFNetworking
-  - Alamofire
-  - SwiftyJSON
+  - BrightFutures
   - YelpAPI
 
 SPEC CHECKSUMS:
-  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
+  BrightFutures: 8681dbb9fa831b69b6e7dc4a498b9e081d5daeb5
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
   YelpAPI: a0475cf4a7b6f9fe81f1bb7b8a8492770f21e3c7
 
-PODFILE CHECKSUM: 514ea968297114c396d13e0006a2dc1eab2a89e0
+PODFILE CHECKSUM: f0e98fb8b1ef79f689e4e822ea004c2093fbf27e
 
 COCOAPODS: 1.2.1
