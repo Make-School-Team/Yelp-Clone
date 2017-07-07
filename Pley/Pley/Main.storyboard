@@ -97,14 +97,17 @@
                             <constraint firstItem="Muk-p9-TTx" firstAttribute="top" secondItem="gVQ-Uw-Cmu" secondAttribute="bottom" constant="47.5" id="8qK-mu-tsq"/>
                             <constraint firstAttribute="trailing" secondItem="gVQ-Uw-Cmu" secondAttribute="trailing" constant="20" id="AfI-Kq-5eG"/>
                             <constraint firstItem="SIe-kc-JZJ" firstAttribute="top" secondItem="f5I-dj-CCk" secondAttribute="bottom" id="FgN-Av-eWL"/>
+                            <constraint firstAttribute="trailing" secondItem="SIe-kc-JZJ" secondAttribute="trailing" id="IJp-BP-nOP"/>
+                            <constraint firstItem="SIe-kc-JZJ" firstAttribute="leading" secondItem="0B6-TL-sg8" secondAttribute="leading" id="TYI-nr-xCp"/>
                             <constraint firstAttribute="trailing" secondItem="SIe-kc-JZJ" secondAttribute="trailing" id="eL3-sh-UX2"/>
                             <constraint firstItem="gVQ-Uw-Cmu" firstAttribute="top" secondItem="SIe-kc-JZJ" secondAttribute="bottom" constant="30" id="m2O-Hf-mrG"/>
+                            <constraint firstItem="SIe-kc-JZJ" firstAttribute="top" secondItem="f5I-dj-CCk" secondAttribute="bottom" id="nPk-vv-CXs"/>
                             <constraint firstItem="SIe-kc-JZJ" firstAttribute="leading" secondItem="0B6-TL-sg8" secondAttribute="leading" id="oXC-53-3Ga"/>
                             <constraint firstItem="gVQ-Uw-Cmu" firstAttribute="leading" secondItem="0B6-TL-sg8" secondAttribute="leading" constant="20" id="rjf-tM-LXw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Details" id="0P9-mG-UfY">
-                        <barButtonItem key="rightBarButtonItem" title="Like" id="spZ-LG-Ryx">
+                        <barButtonItem key="rightBarButtonItem" image="btn_heart_black_outline" id="spZ-LG-Ryx">
                             <connections>
                                 <action selector="likeButtonTapped:" destination="aW2-ru-nEo" id="G5e-0y-DXZ"/>
                             </connections>
@@ -286,13 +289,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fEn-WD-UUn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-265" y="171"/>
+            <point key="canvasLocation" x="244" y="170"/>
         </scene>
     </scenes>
     <resources>
+        <image name="btn_heart_black_outline" width="24" height="24"/>
         <image name="mapButton" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="v3l-Yf-chL"/>
+        <segue reference="bRG-Tl-kj8"/>
     </inferredMetricsTieBreakers>
 </document>
