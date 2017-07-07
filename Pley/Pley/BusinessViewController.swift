@@ -17,76 +17,85 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import AFNetworking
+import YelpAPI
 
-class BusinessViewController: UITableViewController {
-    var access_token: String? = nil // The access token which you'll use to access Yelp Fusion API endpoints. this device has permission to api
-    let baseURL = "https://api.yelp.com/oauth2/token" // URL for getting access
-    let grant_type = "client_credentials" // A paramter that tells the server we want access for "client"
-    let client_id = "7pUDx3Dj4zW2w9LbcErk2w" //specific info so server will know who requests and for what 
-    let client_secret = "QSuOjLjha7ad4BafegjHJXuQQmISTNCmOmnBzt65ue1aRCBxuezdaICzjuRPPUdy" // put your secret here
-    
-    let searchURL = "https://api.yelp.com/v3/businesses/search" // url for searching things
-    
-    let location = "Los Angeles, CA" //location
-    
-    var businesses: [Business] = []
+class BusinessViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableView: UITableView!
+    let appId = "7pUDx3Dj4zW2w9LbcErk2w"
+    let appSecret = "QSuOjLjha7ad4BafegjHJXuQQmISTNCmOmnBzt65ue1aRCBxuezdaICzjuRPPUdy"
+    let query = YLPQuery(location: "San Francisco, CA")
+    var businesses: [YLPBusiness] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        getToken()
-     }
+        query.term = "dinner"
+        query.limit = 25
+        YLPClient.authorize(withAppId: appId, secret: appSecret) { (client, error) in
+            if error != nil {
+                print(error.debugDescription)
+            } else {
+                client?.search(with: self.query, completionHandler: { (search, error) in
+                    if error != nil {
+                        print(error.debugDescription)
+                    } else {
+                        let topBusiness = search?.businesses
+                        for business in topBusiness! {
+                            
+                            self.businesses.append(business)
+                            //print(business)
+                            //print(self.businesses)
+                        }
+                        self.tableView.reloadData()
+                        // print(self.businesses.count)
+                        
+                    }
+                })
+            }
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-    //the fourth is encoding which is the format in which we are sending the information, and then headers are nil because we don't have any
-    func getToken() {
-        Alamofire.request(baseURL, method: .post, parameters: ["grant_type" : grant_type, "client_secret": client_secret], encoding: URLEncoding.default, headers: nil).validate().responseJSON {
-            response in
-            
-            switch response.result.isSuccess {
-            case true:
-                if let value = response.result.value {
-                    let info = JSON(value)
-                    
-                    self.access_token = info["access_token"].stringValue //Store it into the token variable so we can use it later on to tell the server we already have access to it
-                    
-                }
-            case false:
-                print(response.result.error?.localizedDescription ?? "error")
-            }
-        }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        //  print(businesses.count)
+        return 1
     }
     
-    func loadBusiness() {
-        guard let access_token = access_token else {
-            getToken()
-            return
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //   print(businesses.count)
+        return businesses.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BusinessCell", for: indexPath) as! BusinessCell
+        
+        let businessInfo = businesses[indexPath.row]
+        
+        cell.nameLabel.text = businessInfo.name
+        
+        if businessInfo.isClosed == true {
+            cell.priceLabel.text = "Open"
+        } else {
+            cell.priceLabel.text = "Closed"
         }
-        Alamofire.request(searchURL, method: .get, parameters: ["location": location], encoding: URLEncoding.default, headers: ["Authorization": "Bearer \(access_token)"]).validate().responseJSON {
-            response in
-            switch response.result.isSuccess {
-            case true:
-                if let value = response.result.value {
-                    let info = JSON(value)
-                    
-                    let businesses = info["businesses"].arrayValue //store the businesses info
-                    for business in businesses {
-                        self.businesses.append(Business(json:business))
-                    }
-                    
-                    self.tableView.reloadData()
-                    
-                }
-            case false:
-                print(response.result.error?.localizedDescription ?? "error")
-            }
+        //cell.priceLabel.text = String(businessInfo.isClosed)
+        cell.ratingLabel.text = "Rating: \(businessInfo.rating)"
+        cell.addressLabel.text = String(describing: businessInfo.location.address.first!)
+        cell.typesLabel.text = String(describing: businessInfo.categories.first!.name)
+        cell.distanceLabel.text = "Reviews: \(String(describing: businessInfo.reviewCount))"
+        let data = try! Data(contentsOf: businessInfo.imageURL!)
+        let image = UIImage(data: data)
+        cell.businessView.image = image!
+        return cell
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! BusinessCell
+        let vc = segue.destination as! PageViewController
+        let indexPath = tableView.indexPath(for: cell)
+        if let indexPath = indexPath {
+            vc.info = businesses[indexPath.row]
         }
     }
-    
-    
-    
 }
