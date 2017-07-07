@@ -10,6 +10,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="qnc-Rv-Xih">
+            <objects>
+                <viewController id="pgp-Ib-aGc" customClass="MapViewController" customModule="Pley" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Phg-ls-rZI"/>
+                        <viewControllerLayoutGuide type="bottom" id="JnR-Ru-oXg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VCG-SJ-DyL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Nrj-b9-0sB">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nrj-b9-0sB" firstAttribute="top" secondItem="Phg-ls-rZI" secondAttribute="bottom" id="6Np-dl-AuB"/>
+                            <constraint firstItem="JnR-Ru-oXg" firstAttribute="top" secondItem="Nrj-b9-0sB" secondAttribute="bottom" id="9mI-q5-tOc"/>
+                            <constraint firstAttribute="trailing" secondItem="Nrj-b9-0sB" secondAttribute="trailing" id="E6v-W9-P0d"/>
+                            <constraint firstItem="Nrj-b9-0sB" firstAttribute="leading" secondItem="VCG-SJ-DyL" secondAttribute="leading" id="KFD-iW-zEJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Nrj-b9-0sB" id="g0p-wg-Xfu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NwT-OR-sZn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958" y="-562"/>
+        </scene>
         <!--Details-->
         <scene sceneID="iLB-nU-9BL">
             <objects>
@@ -166,8 +198,8 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Liked" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMR-WH-Brv">
-                                                    <rect key="frame" x="336" y="96.5" width="31" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <rect key="frame" x="335" y="96.5" width="32" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                                                     <color key="textColor" red="1" green="0.19607843137254902" blue="0.65098039215686276" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -206,7 +238,7 @@
                                             <outlet property="priceLabel" destination="B76-Un-H33" id="Z0X-Bf-BXE"/>
                                             <outlet property="ratingLabel" destination="5wJ-w7-vWe" id="LRe-rV-y1R"/>
                                             <outlet property="typesLabel" destination="Mfm-hh-cd7" id="8OT-Gg-dKF"/>
-                                            <segue destination="aW2-ru-nEo" kind="show" id="DXD-wh-VMF"/>
+                                            <segue destination="aW2-ru-nEo" kind="show" identifier="displayDetails" id="DXD-wh-VMF"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -218,7 +250,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.87912384139999999" green="1" blue="0.72512023069999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pley" id="QQd-5Q-ttG"/>
+                    <navigationItem key="navigationItem" title="Pley" id="QQd-5Q-ttG">
+                        <barButtonItem key="rightBarButtonItem" image="mapButton" id="t1y-zp-O0S">
+                            <connections>
+                                <segue destination="pgp-Ib-aGc" kind="show" identifier="MapView" id="5Ly-RY-JzS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="businessTableView" destination="w0P-Mk-c15" id="33y-HK-Nbp"/>
                     </connections>
@@ -251,6 +289,9 @@
             <point key="canvasLocation" x="-265" y="171"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mapButton" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="v3l-Yf-chL"/>
     </inferredMetricsTieBreakers>

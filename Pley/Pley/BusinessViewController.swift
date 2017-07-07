@@ -24,17 +24,14 @@ class BusinessViewController: UIViewController {
     let appSecret = "QSuOjLjha7ad4BafegjHJXuQQmISTNCmOmnBzt65ue1aRCBxuezdaICzjuRPPUdy"
     let query = YLPQuery(location: "Los Angeles, CA")
     var businesses: [YLPBusiness] = []
-
+    
     override func viewWillAppear(_ animated: Bool) {
         self.businessTableView.reloadData()
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         query.term = "dinner"
         query.limit = 25
-        
-        
         
         YLPClient.authorize(withAppId: appId, secret: appSecret) { (client, error) in
             if error != nil {
@@ -57,26 +54,27 @@ class BusinessViewController: UIViewController {
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! BusinessCell
-        let vc = segue.destination as! PageViewController
-        let indexPath = businessTableView.indexPath(for: cell)
-        if let indexPath = indexPath {
-            vc.info = businesses[indexPath.row]
-            vc.cell = cell
-            selectedCellIndex = indexPath.row
-//            vc.alphaValue = alphaValue
+        if segue.identifier == "displayDetails"{
+            let cell = sender as! BusinessCell
+            let vc = segue.destination as! PageViewController
+            let indexPath = businessTableView.indexPath(for: cell)
+            if let indexPath = indexPath {
+                vc.info = businesses[indexPath.row]
+                vc.cell = cell
+                selectedCellIndex = indexPath.row
+            }
         }
     }
 }
 extension BusinessViewController: UITableViewDelegate {
- 
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //   print(businesses.count)
         if businesses.count > 0 && alphaValue == nil  {
-        alphaValue = [Int](repeating: 0, count: businesses.count)
+            alphaValue = [Int](repeating: 0, count: businesses.count)
         }
         return businesses.count
     }

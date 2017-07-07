@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7929672C6FBEFE492BBDCF67 /* Pods_Pley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7434D468D7E99B9925992AD2 /* Pods_Pley.framework */; };
+		99561E6C1F10392400BCD593 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99561E6B1F10392400BCD593 /* MapViewController.swift */; };
+		99561E6E1F103AB500BCD593 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99561E6D1F103AB500BCD593 /* CoreLocation.framework */; };
+		99561E701F103ABB00BCD593 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99561E6F1F103ABB00BCD593 /* MapKit.framework */; };
 		999FDA3B1F0EF82300FA5B84 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 999FDA3A1F0EF82300FA5B84 /* PageViewController.swift */; };
 		99A2B4621F0F64C400F592F5 /* Quicksilver.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99A2B4601F0F64A900F592F5 /* Quicksilver.ttf */; };
 		99F2FD031F0EB9CE000429C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99F2FD021F0EB9CE000429C5 /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 		0761089EA0AB45B911286695 /* Pods-Pley.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pley.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pley/Pods-Pley.debug.xcconfig"; sourceTree = "<group>"; };
 		32D3F37A31C3DC45AD354483 /* Pods-Pley.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pley.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pley/Pods-Pley.release.xcconfig"; sourceTree = "<group>"; };
 		7434D468D7E99B9925992AD2 /* Pods_Pley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99561E6B1F10392400BCD593 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		99561E6D1F103AB500BCD593 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		99561E6F1F103ABB00BCD593 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		999FDA3A1F0EF82300FA5B84 /* PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		99A2B4601F0F64A900F592F5 /* Quicksilver.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Quicksilver.ttf; sourceTree = "<group>"; };
 		99F2FD021F0EB9CE000429C5 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -40,6 +46,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99561E701F103ABB00BCD593 /* MapKit.framework in Frameworks */,
+				99561E6E1F103AB500BCD593 /* CoreLocation.framework in Frameworks */,
 				7929672C6FBEFE492BBDCF67 /* Pods_Pley.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -59,6 +67,8 @@
 		651759A91AF47BB5B81A95D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				99561E6F1F103ABB00BCD593 /* MapKit.framework */,
+				99561E6D1F103AB500BCD593 /* CoreLocation.framework */,
 				7434D468D7E99B9925992AD2 /* Pods_Pley.framework */,
 			);
 			name = Frameworks;
@@ -111,6 +121,7 @@
 			children = (
 				B266E9851F0DA30400F90FB0 /* BusinessViewController.swift */,
 				999FDA3A1F0EF82300FA5B84 /* PageViewController.swift */,
+				99561E6B1F10392400BCD593 /* MapViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -251,6 +262,7 @@
 				B266E98C1F0E04AD00F90FB0 /* BusinessCell.swift in Sources */,
 				999FDA3B1F0EF82300FA5B84 /* PageViewController.swift in Sources */,
 				B266E9861F0DA30400F90FB0 /* BusinessViewController.swift in Sources */,
+				99561E6C1F10392400BCD593 /* MapViewController.swift in Sources */,
 				99F305DB1F0D923500EA8BC9 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
