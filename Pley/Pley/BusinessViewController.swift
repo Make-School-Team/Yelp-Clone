@@ -22,7 +22,7 @@ class BusinessViewController: UIViewController {
     @IBOutlet weak var businessTableView: UITableView!
     let appId = "7pUDx3Dj4zW2w9LbcErk2w"
     let appSecret = "QSuOjLjha7ad4BafegjHJXuQQmISTNCmOmnBzt65ue1aRCBxuezdaICzjuRPPUdy"
-    let query = YLPQuery(location: "Los Angeles, CA")
+    let query = YLPQuery(location: "New York, NY")
     var businesses: [YLPBusiness] = []
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,8 +30,8 @@ class BusinessViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        query.term = "dinner"
-        query.limit = 25
+        query.term = "lunch"
+        query.limit = 50
         
         YLPClient.authorize(withAppId: appId, secret: appSecret) { (client, error) in
             if error != nil {

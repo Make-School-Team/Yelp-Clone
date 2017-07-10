@@ -20,7 +20,7 @@ class PageViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var phoneNumberLabel: UIButton!
     @IBOutlet weak var reviewCountLabel: UILabel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,7 +68,7 @@ class PageViewController: UIViewController {
             alphaValue?[selectedCellIndex] = 0
         }
         self.navigationController?.popViewController(animated: true);
-
+        
     }
 }
 

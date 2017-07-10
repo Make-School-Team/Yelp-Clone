@@ -44,9 +44,7 @@ class MapViewController: UIViewController{
                 guard let currentLocation = placemarks?.first else {
                     return
                 }
-                
                 var addressString = ""
-                
                 
                 addressString += currentLocation.subThoroughfare!
                 addressString += currentLocation.thoroughfare!
@@ -57,15 +55,9 @@ class MapViewController: UIViewController{
                 print(addressString)
             }
         }
-        
-        
-        
-        
-        
     }
     
     // MARK:- MapView Reigon & Annotations Helper Methods
-    
     func setUpRepresentReigonOnMap(withLatitude latitude: CLLocationDegrees, longitude: CLLocationDegrees, lattitudeDelta: CLLocationDegrees = 0.01, longitudeDelta: CLLocationDegrees = 0.01) {
         //        let latDelta: CLLocationDegrees = 0.01
         //        let longDelta: CLLocationDegrees = 0.01
