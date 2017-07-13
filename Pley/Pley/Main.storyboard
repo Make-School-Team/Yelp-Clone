@@ -273,7 +273,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kbq-Hq-0mf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="3Ia-Vt-K58">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3Ia-Vt-K58">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -297,6 +297,6 @@
         <image name="mapButton" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bRG-Tl-kj8"/>
+        <segue reference="v3l-Yf-chL"/>
     </inferredMetricsTieBreakers>
 </document>
